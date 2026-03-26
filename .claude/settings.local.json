@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx --version)",
+      "Bash(node --version)",
+      "Bash(php --version)",
+      "Bash(ruby --version)",
+      "Bash(brew list)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
+      "Bash(python3 -c \":*)",
+      "Bash(python3:*)",
+      "Bash(ls -la \"/Users/sarah/Documents/portfolio-website/images/\"*.jpg \"/Users/sarah/Documents/portfolio-website/images/\"*.jpeg)",
+      "Bash(ls -la /Users/sarah/Documents/portfolio-website/images/*.jpg)",
+      "Bash(npx --help)",
+      "Bash(pip3 install pyngrok)",
+      "WebFetch(domain:www.instagram.com)",
+      "WebFetch(domain:jennacooperla.com)",
+      "WebFetch(domain:www.compass.com)",
+      "WebFetch(domain:unsplash.com)",
+      "WebSearch",
+      "Bash(cp -r /Users/sarah/Documents/portfolio-website/* /tmp/portfolio-website/)",
+      "Bash(mkdir -p /tmp/portfolio-website)",
+      "Bash(xargs kill:*)",
+      "Bash(cp /Users/sarah/Documents/portfolio-website/index.html /tmp/portfolio-website/)",
+      "Bash(cp \"/Users/sarah/Documents/portfolio-website/images/Schumacher.png\" /tmp/portfolio-website/images/)"
+    ]
+  }
+}
