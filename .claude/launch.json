@@ -4,7 +4,7 @@
     {
       "name": "portfolio",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["/tmp/portfolio-website/server.py"],
+      "runtimeArgs": ["/tmp/serve_portfolio.py"],
       "port": 8080
     }
   ]
