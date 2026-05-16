@@ -181,16 +181,16 @@ a {
    Portfolio Grid (3-column masonry)
    ============================================ */
 .portfolio-grid {
-    columns: 3;
-    column-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
     padding: 2rem 4vw 4rem;
     max-width: 1500px;
     margin: 0 auto;
+    align-items: start;
 }
 
 .grid-item {
-    break-inside: avoid;
-    margin-bottom: 1rem;
     overflow: hidden;
 }
 
@@ -479,7 +479,7 @@ body:has(.lightbox.active) .site-footer {
     }
 
     .portfolio-grid {
-        columns: 1;
+        grid-template-columns: 1fr;
         padding: 3rem 5vw;
     }
 
@@ -500,7 +500,7 @@ body:has(.lightbox.active) .site-footer {
 
 @media (max-width: 1024px) and (min-width: 769px) {
     .portfolio-grid {
-        columns: 2;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .testimonials-grid {
