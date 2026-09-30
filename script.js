@@ -68,6 +68,53 @@
 })();
 
 // ============================================
+// Masonry Grid
+// ============================================
+(function () {
+    var grid = document.querySelector('.portfolio-grid');
+    if (!grid) return;
+
+    var items = Array.prototype.slice.call(grid.querySelectorAll('.grid-item'));
+    var currentCount = 0;
+
+    function columnCount() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    }
+
+    function layout() {
+        var count = columnCount();
+        if (count === currentCount) return;
+        currentCount = count;
+
+        var cols = [];
+        var heights = [];
+        for (var i = 0; i < count; i++) {
+            var col = document.createElement('div');
+            col.className = 'masonry-col';
+            cols.push(col);
+            heights.push(0);
+        }
+
+        // Place each item in the shortest column so columns stay balanced with no gaps.
+        items.forEach(function (item) {
+            var img = item.querySelector('img');
+            var ratio = (+img.getAttribute('height') / +img.getAttribute('width')) || 1;
+            var shortest = heights.indexOf(Math.min.apply(null, heights));
+            cols[shortest].appendChild(item);
+            heights[shortest] += ratio + 0.04;
+        });
+
+        grid.replaceChildren.apply(grid, cols);
+        grid.classList.add('masonry');
+    }
+
+    layout();
+    window.addEventListener('resize', layout);
+})();
+
+// ============================================
 // Lightbox
 // ============================================
 (function () {
